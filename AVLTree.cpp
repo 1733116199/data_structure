@@ -68,11 +68,11 @@ public:
         }
         rebalance(subtree);
     }
-    K numBetween(K lowerBound, K upperBound){
+    int numBetween(K lowerBound, K upperBound){
         return findInclusive(root, upperBound) - findExclusive(root, lowerBound);
     }
 
-    K findInclusive(Node *& subtree, K k){
+    int findInclusive(Node *& subtree, K k){
         if(subtree == NULL)
             return 0;
         if(k >= subtree->key){
@@ -82,7 +82,7 @@ public:
         }
     }
 
-    K findExclusive(Node *& subtree, K k){
+    int findExclusive(Node *& subtree, K k){
         if(subtree == NULL)
             return 0;
         if(k > subtree->key){
